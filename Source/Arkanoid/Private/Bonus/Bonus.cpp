@@ -16,7 +16,7 @@ void ABonus::BeginPlay()
 {
 	Super::BeginPlay();
 
-	Duration = FMath::Max(GetWorld()->GetDeltaSeconds(), Duration);
+	Duration = FMath::Max(GetWorld()->DeltaTimeSeconds, Duration);
 	BonusMesh->SetRelativeScale3D(FVector(-1.0f, -2.0f, 0.25f));
 }
 

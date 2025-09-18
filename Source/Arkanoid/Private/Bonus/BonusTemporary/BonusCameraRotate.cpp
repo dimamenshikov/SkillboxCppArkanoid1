@@ -20,8 +20,8 @@ void ABonusCameraRotate::BonusAction(ABonus* OldBonus)
 		if (_Camera && _Camera->ActorHasTag("ArkanoidCamera"))
 		{
 			Camera = *_Camera;
-			GetWorldTimerManager().SetTimer(TimerCameraRotate, this, &ABonusCameraRotate::CameraRotate, 0.033333f,
-			                                true);
+			GetWorldTimerManager().SetTimer(TimerCameraRotate, this, &ABonusCameraRotate::CameraRotate,
+			                                0.033333f, true);
 			break;
 		}
 	}
@@ -41,6 +41,6 @@ void ABonusCameraRotate::CameraRotate()
 {
 	if (Camera)
 	{
-		Camera->AddActorWorldRotation(FRotator(0.0f, GetWorld()->GetDeltaSeconds() * CameraSpeed, 0.0f));
+		Camera->AddActorWorldRotation(FRotator(0.0f, 0.033333f * CameraSpeed, 0.0f));
 	}
 }

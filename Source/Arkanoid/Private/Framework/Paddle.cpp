@@ -172,7 +172,7 @@ void APaddle::Move(const FInputActionValue& Value)
 	const FVector2D VectorMove = Value.Get<FVector2D>();
 	if (Controller)
 	{
-		const float MoveSpeed = VectorMove.X * PaddleSpeed * GetWorld()->GetDeltaSeconds();
+		const float MoveSpeed = VectorMove.X * PaddleSpeed * GetWorld()->DeltaTimeSeconds;
 		AddActorLocalOffset(FVector(0.0f, MoveSpeed, 0.0f), true);
 	}
 }

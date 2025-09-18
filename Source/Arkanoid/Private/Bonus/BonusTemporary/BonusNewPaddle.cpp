@@ -34,10 +34,11 @@ void ABonusNewPaddle::BonusAction(ABonus* OldBonus)
 	BonusMesh->SetCollisionResponseToAllChannels(ECR_Block);
 
 	SetActorScale3D(FVector(0.4f, 3.0f, 0.4f));
-	GetWorldTimerManager().SetTimer(TimerPaddle, this, &ABonusNewPaddle::MovePaddle, 0.033333f, true);
+	GetWorldTimerManager().SetTimer(TimerPaddle, this, &ABonusNewPaddle::MovePaddle, 0.033333f,
+	                                true);
 }
 
 void ABonusNewPaddle::MovePaddle()
 {
-	AddActorLocalOffset(FVector(0.0f, Speed * GetWorld()->GetDeltaSeconds(), 0.0f), true);
+	AddActorLocalOffset(FVector(0.0f, Speed * 0.033333f, 0.0f), true);
 }
